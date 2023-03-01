@@ -4,10 +4,13 @@
     --rs-c-jasper: #CD5334;
     --rs-c-cream: #EBEFBF;
     --rs-c-lapisLazuli: #255C99;
+    --rs-c-thistle: #c9b1bd;
 }
 
 :root{
     --color-background: var(--rs-c-night);
+    --color-background-lighter: #1e2d27;
+    --color-background-light: #334d42;
 
     --color-text: var(--rs-c-cream);
     --color-text-inverted: var(--rs-c-night);
@@ -17,7 +20,7 @@
     --color-accent: var(--rs-c-verdigris);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root{
         --color-background: var(--rs-c-cream);
 
@@ -58,11 +61,11 @@ body {
 
 #app {
   min-height: 100vh; 
-  display: flex;
+  /* display: flex;
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   overflow: hidden;
 }
