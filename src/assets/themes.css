@@ -15,7 +15,8 @@
     --color-text: var(--rs-c-cream);
     --color-text-inverted: var(--rs-c-night);
 
-    --color-primary: var(--rs-c-lapisLazuli);
+    --color-primary: var(--rs-c-cream);
+    --color-primary-darker: #bdc09b;
     --color-secondary: var(--rs-c-jasper);
     --color-accent: var(--rs-c-verdigris);
 }
