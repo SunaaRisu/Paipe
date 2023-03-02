@@ -1,9 +1,9 @@
 <script setup>
-
+    
 </script>
 
 <template>
-    <nav>
+    <nav v-show="this.$store.state.viewData.sideMenu">
         <a href="https://sunaarisu.de/privacy">Privacy</a>
     </nav>
 </template>

@@ -5,7 +5,7 @@
 <template>
     <nav>
         <div id="blContainer">
-            <div id="burger">
+            <div id="burger" @click="this.$store.commit('toggleSideMenu')">
                 <div class="burgerLine" id="b1"></div>
                 <div class="burgerLine" id="b2"></div>
                 <div class="burgerLine" id="b3"></div>
