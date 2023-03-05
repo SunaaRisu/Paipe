@@ -1,7 +1,12 @@
 <script setup>
-  import Home from './views/home.vue';
+  import { RouterView } from 'vue-router';
+
+  import Nav from './components/generally/nav.vue'
+  import SideMenu from './components/generally/sideMenu.vue'
 </script>
 
 <template>
-  <Home> </Home>
+  <Nav></Nav>
+  <SideMenu></SideMenu>
+  <RouterView />
 </template>

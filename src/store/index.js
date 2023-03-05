@@ -12,6 +12,9 @@ const store = createStore({
     mutations: {
         toggleSideMenu(state) {
             state.viewData.sideMenu = !state.viewData.sideMenu;
+        },
+        showSideMenu(state, x){
+            state.viewData.sideMenu = x;
         }
     },
     getters: {}

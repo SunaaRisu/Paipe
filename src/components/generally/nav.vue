@@ -1,11 +1,21 @@
 <script setup>
-
+    import { ref } from 'vue'
+    import { useRouter } from 'vue-router';
+    import { useStore } from 'vuex';
+    const router = useRouter();
+    const store = useStore();
+    const searchInput = ref('');
+    function searchSubmit() {        
+        this.router.push({ path: '/search', query: { search: searchInput.value} });
+        this.store.commit('showSideMenu', false);
+        searchInput.value = ""
+    }
 </script>
 
 <template>
     <nav>
         <div id="blContainer">
-            <div id="burger" @click="this.$store.commit('toggleSideMenu')">
+            <div id="burger" @click="$event => this.$store.commit('toggleSideMenu')">
                 <div class="burgerLine" id="b1"></div>
                 <div class="burgerLine" id="b2"></div>
                 <div class="burgerLine" id="b3"></div>
@@ -13,8 +23,8 @@
             <div id="logo"><a href="https://stream.sunaarisu.de"><img src="https://srcsrv.sunaarisu.de/sunaarisu.de/img/Risu-Logo-White.svg" alt="RISU Logo"></a></div>
         </div>
         <div id="searchbar">
-            <form action="">
-                <input type="text">
+            <form @submit.prevent="$event => searchSubmit()">
+                <input type="text" name="search" v-model="searchInput">
                 <button type="submit">
                     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="35" cy="39" r="22.5" stroke="#EBEFBF" stroke-width="5"/>

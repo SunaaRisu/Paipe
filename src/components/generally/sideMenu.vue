@@ -6,13 +6,15 @@
     <nav v-show="this.$store.state.viewData.sideMenu">
         <div id="navBtns">
 
-            <div id="homeBtnLogo" class="sideMenuBtn">
-                <svg width="30" height="30" viewBox="0 0 95 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.7986 34.64V98H38.6528V71.12H56.3472V98H77.2014V34.64M2 51.28L47.5 2L93 51.28" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
-                </svg>
-                <div class="seperator"></div>
-                <span>Home</span>
-            </div>
+            <router-link to="/" style="text-decoration: none;">
+                <div id="homeBtnLogo" class="sideMenuBtn">
+                    <svg width="30" height="30" viewBox="0 0 95 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.7986 34.64V98H38.6528V71.12H56.3472V98H77.2014V34.64M2 51.28L47.5 2L93 51.28" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
+                    </svg>
+                    <div class="seperator"></div>
+                    <span>Home</span>
+                </div>
+            </router-link>
 
             <div id="libaryBtnLogo" class="sideMenuBtn">
                 <svg width="30" height="30" viewBox="0 0 54 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,15 +24,18 @@
                 <span>Library</span>
             </div>
 
-            <div id="notificationBtnLogo" class="sideMenuBtn">
-                <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M74.3868 68.3072L80.6199 81.34H19.3801L25.6132 68.3072L25.7243 67.9854L29.6843 50.1654L29.7126 49.9893L31.3626 33.4893L32.1465 25.6502L37.556 18.34H43.4H50H56.6H62.444L67.8535 25.6502L68.6374 33.4893L70.2874 49.9893L70.3157 50.1654L74.2757 67.9854L74.3868 68.3072Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
-                <path d="M47.9813 15.66L45.9849 13.6636L44.3719 9.89999L45.8822 6.37591L50 4.31704L54.1177 6.37591L55.628 9.9L54.0151 13.6636L52.0187 15.66H50L47.9813 15.66Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
-                <path d="M41.5768 87.5543L43.5907 81.34H56.4093L58.4232 87.5543L56.3042 94.0928L50 96.2543L43.6958 94.0928L41.5768 87.5543Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
-                </svg>
-                <div class="seperator"></div>
-                <span>Notifications</span>
-            </div>
+            <router-link to="/notifications" style="text-decoration: none;">
+                <div id="notificationBtnLogo" class="sideMenuBtn">
+                    <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M74.3868 68.3072L80.6199 81.34H19.3801L25.6132 68.3072L25.7243 67.9854L29.6843 50.1654L29.7126 49.9893L31.3626 33.4893L32.1465 25.6502L37.556 18.34H43.4H50H56.6H62.444L67.8535 25.6502L68.6374 33.4893L70.2874 49.9893L70.3157 50.1654L74.2757 67.9854L74.3868 68.3072Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
+                    <path d="M47.9813 15.66L45.9849 13.6636L44.3719 9.89999L45.8822 6.37591L50 4.31704L54.1177 6.37591L55.628 9.9L54.0151 13.6636L52.0187 15.66H50L47.9813 15.66Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
+                    <path d="M41.5768 87.5543L43.5907 81.34H56.4093L58.4232 87.5543L56.3042 94.0928L50 96.2543L43.6958 94.0928L41.5768 87.5543Z" stroke="var(--color-text)" stroke-width="6" stroke-linejoin="bevel"/>
+                    </svg>
+                    <div class="seperator"></div>
+                    <span>Notifications</span>
+                </div>
+            </router-link>
+
 
             <div id="watchHistoryBtnLogo" class="sideMenuBtn">
                 <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,6 +96,7 @@
         align-items: center;
         font-size: 20px;
         margin-left: 15px;
+        color: var(--color-text);       
     }
     #homeBtnLogo{
         margin-top: 30px;       
