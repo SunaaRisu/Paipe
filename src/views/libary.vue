@@ -1,0 +1,3 @@
+<template>
+    libary
+</template>

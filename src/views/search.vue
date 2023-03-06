@@ -18,6 +18,18 @@
 
 </script>
 
-<template>    
-    <p>No result for " {{ search }}"</p>
+<template>  
+    <main>
+        <p>No result for "{{ search }}"</p>
+    </main>      
 </template>
+
+<style scoped>
+    main{
+        display: flex;
+        justify-content: center;
+    }
+    p{
+        margin-top: 100px;
+    }
+</style>
