@@ -5,17 +5,19 @@
     const router = useRouter();
     const store = useStore();
     const searchInput = ref('');
-    function searchSubmit() {        
-        this.router.push({ path: '/search', query: { search: searchInput.value} });
-        this.store.commit('showSideMenu', false);
-        searchInput.value = ""
+    function searchSubmit() {   
+        if (searchInput.value != "") {
+            router.push({ path: '/search', query: { search: searchInput.value} });
+            store.commit('showSideMenu', false);
+            searchInput.value = "";
+        }          
     }
 </script>
 
 <template>
     <nav>
         <div id="blContainer">
-            <div id="burger" @click="$event => this.$store.commit('toggleSideMenu')">
+            <div id="burger" @click="$event => store.commit('toggleSideMenu')">
                 <div class="burgerLine" id="b1"></div>
                 <div class="burgerLine" id="b2"></div>
                 <div class="burgerLine" id="b3"></div>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav v-show="this.$store.state.viewData.sideMenu">
+    <nav v-show="$store.state.viewData.sideMenu">
         <div id="navBtns">
 
             <router-link to="/" style="text-decoration: none;">
