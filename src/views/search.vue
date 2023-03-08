@@ -1,6 +1,6 @@
 <script setup>
 
-    import { onBeforeRouteUpdate, useRoute } from 'vue-router';
+    import { useRoute } from 'vue-router';
     import { ref, onUpdated } from 'vue';
     const route = useRoute();
     const search = ref("");
