@@ -8,6 +8,7 @@ const router = createRouter({
         {path: '/notifications', name: 'Notifications', component: () => import('../views/notifications.vue')},
         {path: '/libary', name: 'Libary', component: () => import('../views/libary.vue')},
         {path: '/history', name: 'History', component: () => import('../views/history.vue')},
+        {path: '/watch/:vid', name: 'Watch', component: () => import('../views/watch.vue')},
     ]
 })
 
