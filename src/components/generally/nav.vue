@@ -22,7 +22,7 @@
                 <div class="burgerLine" id="b2"></div>
                 <div class="burgerLine" id="b3"></div>
             </div>
-            <div id="logo"><a href="https://stream.sunaarisu.de"><img src="https://srcsrv.sunaarisu.de/sunaarisu.de/img/Risu-Logo-White.svg" alt="RISU Logo"></a></div>
+            <div id="logo"><a href="https://paipe.sunaarisu.de"><img src="/logo.svg" alt="Paipe Logo"></a></div>
         </div>
         <div id="searchbar">
             <form @submit.prevent="$event => searchSubmit()">
@@ -95,9 +95,16 @@
         height: 100%;
         width: 50px;
     }
-    #logo img{
-        width: 100%;
+    #logo a{
         height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #logo img{
+        width: 60%;
+        height: 60%;
     }
     #logo a{
         cursor: default;

@@ -1,13 +1,18 @@
 <script setup>
     import { useRoute, useRouter, RouterLink } from 'vue-router';
     import { ref, onMounted } from 'vue';
+    import { useStore } from 'vuex';
 
 
     const route = useRoute();
     const router = useRouter();
+    const store = useStore();
     const link = route.query.link;
     var linkString = ref('');
     var websiteSecurity = false;
+
+    store.commit('toggleSideMenu')
+
 
     if (link.startsWith('https://www.')) {
         linkString.value = link.slice(12);  
@@ -21,7 +26,10 @@
     }
 
 
-
+    onMounted(() => {
+        let btn1 = document.getElementById("btn1").offsetWidth;
+        document.getElementById("btn2").style.width = btn1 + "px";
+    })
     
     function goToLink(){
             window.location.href = 'https://www.' + linkString.value;        
@@ -37,7 +45,7 @@
         <h2 v-if="!websiteSecurity">Warning: This Website may have no encryption. Please do not enter personal data (e.g Bank information, Address, etc.) unless you can confirm that this website has encryption.</h2>
         <RouterLink to="/security/website-encryption" v-if="!websiteSecurity">How to tell if a website has encryption?</RouterLink>
         <div id="btnContainer">
-            <div class="Btn" ref="btn1" @click="goToLink()">
+            <div class="Btn" id="btn1" @click="goToLink()">
                 <span>Go to "{{ linkString }}"</span>
             </div>
 
