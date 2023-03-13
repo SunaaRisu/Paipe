@@ -12,6 +12,10 @@
             searchInput.value = "";
         }          
     }
+
+    function loadingBarProgress() {
+        document.getElementById('loadingBar');
+    }
 </script>
 
 <template>

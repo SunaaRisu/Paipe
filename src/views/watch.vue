@@ -12,6 +12,6 @@
 
 <style scoped>
     video{
-        width: 100%;
+        width: 90%;
     }
 </style>
