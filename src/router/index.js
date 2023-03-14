@@ -13,4 +13,20 @@ const router = createRouter({
     ]
 })
 
+router.beforeResolve((to, from, next) => {
+    // If this isn't an initial page load.
+    if (to.name) {
+      // Start the route progress bar.
+      LoadingBar.start()
+    }
+    next()
+  })
+  
+  router.afterEach((to, from) => {
+    // Complete the animation of the route progress bar.
+    LoadingBar.done()
+  })
+  
+
+
 export default router;

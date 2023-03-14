@@ -186,6 +186,7 @@
     }
     #loadingBar{
         background-color: var(--rs-c-thistle);
+        transition: background-color 0.2s linear;
         height: 2px;
     }
 </style>
