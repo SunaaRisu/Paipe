@@ -3,15 +3,15 @@
 <path d="M158 1.5H1001V832.5H158V1.5Z" fill="#CD5334"/>
 <rect y="167" width="843" height="833" fill="#17BEBB"/>
 <g filter="url(#filter0_d_1_2)">
-<path d="M63.8 78.5H903.8V764.075L834.173 833.523L758 909.5H63.8V78.5Z" fill="#EBEFBF"/>
+<path d="M80 84H920V769.575L850.373 839.023L774.2 915H80V84Z" fill="#EBEFBF"/>
 </g>
-<path d="M758 765H904L758 910V765Z" fill="#FCFFDE"/>
+<path d="M774.2 770.5H920.2L774.2 915.5V770.5Z" fill="#FCFFDE"/>
 <g filter="url(#filter1_i_1_2)">
-<path d="M682 499.5L385 667.942V331.058L682 499.5Z" fill="#17BEBB"/>
+<path d="M698 499.5L401 667.942V331.058L698 499.5Z" fill="#17BEBB"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d_1_2" x="59.8" y="78.5" width="848" height="839" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_1_2" x="76" y="84" width="848" height="839" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -21,7 +21,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
 </filter>
-<filter id="filter1_i_1_2" x="376" y="331.058" width="306" height="340.884" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_i_1_2" x="392" y="331.058" width="306" height="340.884" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
