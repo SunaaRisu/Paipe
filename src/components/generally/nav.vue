@@ -1,10 +1,13 @@
 <script setup>
     import { ref } from 'vue'
-    import { useRouter } from 'vue-router';
+    import { useRoute, useRouter } from 'vue-router';
     import { useStore } from 'vuex';
     const router = useRouter();
+    const route = useRoute;
     const store = useStore();
     const searchInput = ref('');
+    const fullscreen = route.path == "/login";
+    console.log(fullscreen)
     function searchSubmit() {   
         if (searchInput.value != "") {
             router.push({ path: '/search', query: { search: searchInput.value} });
@@ -13,13 +16,18 @@
         }          
     }
 
+    function loginFullScreen() {
+        store.commit('showSideMenu', false);
+        store.commit('showNav', false)
+    }
+
     function loadingBarProgress() {
         document.getElementById('loadingBar');
     }
 </script>
 
 <template>
-    <nav>
+    <nav v-show="!fullscreen">
         <div id="blContainer">
             <div id="burger" @click="$event => store.commit('toggleSideMenu')">
                 <div class="burgerLine" id="b1"></div>
@@ -40,12 +48,15 @@
             </form>
         </div>
         <div id="account">
-            <div id="loginBtn">
-                <span>LOGIN</span>
-            </div>
+            <RouterLink @click="$event => loginFullScreen()" to="/login" style="text-decoration: none; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
+                <div id="loginBtn">
+                    <span>LOGIN</span>
+                </div>
+            </RouterLink>
+            
         </div>
     </nav>  
-    <div id="loadingBar"></div>
+    <div id="loadingBar" v-show="$store.state.viewData.nav"></div>
 </template>
 
 <style scoped>

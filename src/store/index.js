@@ -4,7 +4,8 @@ const store = createStore({
     state () {
         return{
             viewData: {
-                sideMenu: true
+                sideMenu: true,
+                nav: true
             }
             
         }
@@ -15,7 +16,10 @@ const store = createStore({
         },
         showSideMenu(state, x){
             state.viewData.sideMenu = x;
-        }
+        },
+        showNav(state, x){
+            state.viewData.nav = x;
+        },
     },
     getters: {}
 });
