@@ -10,6 +10,7 @@ const router = createRouter({
         {path: '/history', name: 'History', component: () => import('../views/history.vue')},
         {path: '/watch/:vid', name: 'Watch', component: () => import('../views/watch.vue')},
         {path: '/login', name: 'Login', component: () => import('../views/login.vue')},
+        {path: '/signup', name: 'Signup', component: () => import('../views/signup.vue')},
         {path: '/redirect', name: 'Redirect', component: () => import('../views/redirect.vue')},
     ]
 })
