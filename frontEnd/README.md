@@ -1,0 +1,1 @@
+colorpalet: https://coolors.co/0a0f0d-17bebb-cd5334-ebefbf-c9b1bd

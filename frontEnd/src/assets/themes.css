@@ -1,0 +1,74 @@
+:root{
+    --rs-c-night: #0A0F0D;
+    --rs-c-verdigris: #17BEBB;
+    --rs-c-jasper: #CD5334;
+    --rs-c-cream: #EBEFBF;
+    --rs-c-lapisLazuli: #255C99;
+    --rs-c-thistle: #c9b1bd;
+}
+
+:root{
+    --color-background: var(--rs-c-night);
+    --color-background-lighter: #1e2d27;
+    --color-background-light: #334d42;
+
+    --color-text: var(--rs-c-cream);
+    --color-text-inverted: var(--rs-c-night);
+
+    --color-primary: var(--rs-c-cream);
+    --color-primary-darker: #bdc09b;
+    --color-secondary: var(--rs-c-jasper);
+    --color-accent: var(--rs-c-verdigris);
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
+        --color-background: var(--rs-c-cream);
+
+        --color-text: var(--rs-c-night);
+        --color-text-inverted: var(--rs-c-cream);
+    }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  /* transition: color 0.5s, background-color 0.5s;         y?*/ 
+  
+  font-family: "Muli", sans-serif;
+  
+  /* text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+
+  
+}
+
+#app {
+  min-height: 100vh; 
+  /* display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  overflow: hidden;
+}
+
+
