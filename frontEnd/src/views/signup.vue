@@ -6,7 +6,13 @@ import { onUpdated, ref } from 'vue';
     const email = ref('');
     const emailErr = ref('');
     const password = ref('');
-    const passwordErr  = ref('');
+    
+    const passwordErrLenght = ref(false);
+    const passwordErrUpperCase = ref(false);
+    const passwordErrLowerCase = ref(false);
+    const passwordErrSpecial = ref(false);
+    const passwordErrNumbers = ref(false);
+
     const conPassword = ref('');
     const conPasswordErr = ref('');
     
@@ -18,33 +24,48 @@ import { onUpdated, ref } from 'vue';
             emailErr.value = ''
         }
 
-        if (password.value != '') {
-            passwordErr.value = '';
+        // if (password.value != '') {
+            // passwordErr.value = '';
 
             if (password.value.length <= 15) {
-                passwordErr.value += '15 Characters, ';                
+                // passwordErr.value += '15 Characters, ';     
+                passwordErrLenght.value = true;           
+            }else {
+                passwordErrLenght.value = false;           
             }
 
             if (!/\d/.test(password.value)){
-                passwordErr.value += 'numbers, ';                
+                // passwordErr.value += 'numbers, '; 
+                passwordErrNumbers.value = true;              
+            }else {
+                passwordErrNumbers.value = false;              
             }
 
             if (!/[a-z]/.test(password.value)) {
-                passwordErr.value += 'lower case, ';
+                // passwordErr.value += 'lower case, ';
+                passwordErrLowerCase.value = true;
+            }else {
+                passwordErrLowerCase.value = false;
             }
 
             if (!/[A-Z]/.test(password.value)) {
-                passwordErr.value += 'upper case, ';
+                // passwordErr.value += 'upper case, ';
+                passwordErrUpperCase.value = true;
+            }else {
+                passwordErrUpperCase.value = false;
             }
 
             if (!/[!-\/:-@[-`{-~]/.test(password.value)) {
-                passwordErr.value += 'special characters';
+                // passwordErr.value += 'special characters';
+                passwordErrSpecial.value = true;
+            }else {
+                passwordErrSpecial.value = false;
             }
 
-            if (passwordErr.value[passwordErr.value.length - 2] == ','){
-                passwordErr.value = passwordErr.value.substring(0, passwordErr.value.length - 2)
-            }
-        }
+            // if (passwordErr.value[passwordErr.value.length - 2] == ','){
+            //     passwordErr.value = passwordErr.value.substring(0, passwordErr.value.length - 2)
+            // }
+        // }
 
         if (password.value != '' && conPassword.value != '' && password.value != conPassword.value){
             conPasswordErr.value = 'Passwords do not match';
@@ -78,7 +99,11 @@ import { onUpdated, ref } from 'vue';
                 <div class="sign_up_form_control">
                     <input type="password" name="password" required placeholder="Password" v-model="password">
                     
-                    <p>{{ passwordErr }}</p>  
+                    <span v-show="passwordErrLenght">15 characters, </span>  
+                    <span v-show="passwordErrUpperCase">upper case, </span>  
+                    <span v-show="passwordErrLowerCase">lower case, </span>  
+                    <span v-show="passwordErrSpecial">special characters, </span>  
+                    <span v-show="passwordErrNumbers">numbers</span>  
                 </div>
                 <div class="sign_up_form_control">
                     <input type="password" name="conPassword" required placeholder="Confirm Password" v-model="conPassword">
