@@ -24,48 +24,40 @@ import { onUpdated, ref } from 'vue';
             emailErr.value = ''
         }
 
-        // if (password.value != '') {
-            // passwordErr.value = '';
-
             if (password.value.length <= 15) {
-                // passwordErr.value += '15 Characters, ';     
+   
                 passwordErrLenght.value = true;           
             }else {
                 passwordErrLenght.value = false;           
             }
 
             if (!/\d/.test(password.value)){
-                // passwordErr.value += 'numbers, '; 
+
                 passwordErrNumbers.value = true;              
             }else {
                 passwordErrNumbers.value = false;              
             }
 
             if (!/[a-z]/.test(password.value)) {
-                // passwordErr.value += 'lower case, ';
+
                 passwordErrLowerCase.value = true;
             }else {
                 passwordErrLowerCase.value = false;
             }
 
             if (!/[A-Z]/.test(password.value)) {
-                // passwordErr.value += 'upper case, ';
+
                 passwordErrUpperCase.value = true;
             }else {
                 passwordErrUpperCase.value = false;
             }
 
             if (!/[!-\/:-@[-`{-~]/.test(password.value)) {
-                // passwordErr.value += 'special characters';
+
                 passwordErrSpecial.value = true;
             }else {
                 passwordErrSpecial.value = false;
             }
-
-            // if (passwordErr.value[passwordErr.value.length - 2] == ','){
-            //     passwordErr.value = passwordErr.value.substring(0, passwordErr.value.length - 2)
-            // }
-        // }
 
         if (password.value != '' && conPassword.value != '' && password.value != conPassword.value){
             conPasswordErr.value = 'Passwords do not match';
@@ -99,11 +91,14 @@ import { onUpdated, ref } from 'vue';
                 <div class="sign_up_form_control">
                     <input type="password" name="password" required placeholder="Password" v-model="password">
                     
-                    <span v-show="passwordErrLenght">15 characters, </span>  
-                    <span v-show="passwordErrUpperCase">upper case, </span>  
-                    <span v-show="passwordErrLowerCase">lower case, </span>  
-                    <span v-show="passwordErrSpecial">special characters, </span>  
-                    <span v-show="passwordErrNumbers">numbers</span>  
+                    <div class="spanContainer">
+                        <span v-show="passwordErrLenght">15 characters, </span>  
+                        <span v-show="passwordErrUpperCase">upper case, </span>  
+                        <span v-show="passwordErrLowerCase">lower case, </span>  
+                        <span v-show="passwordErrSpecial">special characters, </span>  
+                        <span v-show="passwordErrNumbers">numbers</span>  
+                    </div>
+                    
                 </div>
                 <div class="sign_up_form_control">
                     <input type="password" name="conPassword" required placeholder="Confirm Password" v-model="conPassword">
@@ -203,6 +198,17 @@ import { onUpdated, ref } from 'vue';
         margin-top: 6px;
         margin-bottom: 18px;
         color: var(--error);
+    }
+
+    .spanContainer{
+        height: 12px;
+        margin-top: 6px;
+        margin-bottom: 12px;
+    }
+
+    .spanContainer span{
+        font-size: 12px;
+        margin-right: 3px;
     }
 
     .sign_up_form_control input {
