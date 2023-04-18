@@ -75,7 +75,10 @@ import { onUpdated, ref } from 'vue';
     <main>
         <div class="sign_up_container">
             
-                <img src="/logo.svg" alt="Paipe Logo" height="100">
+                <RouterLink to="/">
+                    <img src="/logo.svg" alt="Paipe Logo" height="100">
+                </RouterLink>
+                
             
             <form @submit.prevent="$event => signupSubmit()">
                 <div class="sign_up_form_control">
