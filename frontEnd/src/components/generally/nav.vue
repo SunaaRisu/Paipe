@@ -24,7 +24,7 @@
     }
 
     watch(route, (from, to) => {
-        if (to.path == '/login' || to.path == '/signup'){
+        if (to.path == '/login' || to.path == '/signup' || to.path == '/privacy'){
             fullscreen.value = true;
             store.commit('showSideMenu', false);
         }else{
